@@ -8,10 +8,9 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class SignInActivity extends AppCompatActivity {
 
-    EditText etLoginEmail, etLoginPassword;
-    Button btnSignIn;
-    TextView tvSignUpRedirect;
-
+    private EditText etLoginEmail, etLoginPassword;
+    private Button btnSignIn;
+    private TextView tvSignUpRedirect;
     private FirebaseAuth mAuth;
 
     @Override
@@ -19,12 +18,13 @@ public class SignInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
 
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setTitle("Sign In");
-        }
-
         mAuth = FirebaseAuth.getInstance();
+
+        // Check if user is already logged in
+        if (mAuth.getCurrentUser() != null) {
+            startActivity(new Intent(SignInActivity.this, HomeActivity.class));
+            finish();
+        }
 
         etLoginEmail = findViewById(R.id.etLoginEmail);
         etLoginPassword = findViewById(R.id.etLoginPassword);
@@ -35,27 +35,26 @@ public class SignInActivity extends AppCompatActivity {
             String email = etLoginEmail.getText().toString().trim();
             String password = etLoginPassword.getText().toString().trim();
 
+            if (email.isEmpty() || password.isEmpty()) {
+                Toast.makeText(SignInActivity.this, "Please fill all fields", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
             mAuth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(task -> {
                         if (task.isSuccessful()) {
-                            Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(this, MainActivity.class));
+                            Toast.makeText(SignInActivity.this, "Login successful!", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(SignInActivity.this, HomeActivity.class));
                             finish();
                         } else {
-                            Toast.makeText(this, "Login failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignInActivity.this, "Login failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     });
         });
 
         tvSignUpRedirect.setOnClickListener(v -> {
-            startActivity(new Intent(this, SignUpActivity.class));
+            startActivity(new Intent(SignInActivity.this, SignUpActivity.class));
             finish();
         });
-    }
-
-    @Override
-    public boolean onSupportNavigateUp() {
-        finish();
-        return true;
     }
 }

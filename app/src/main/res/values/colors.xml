@@ -2,4 +2,59 @@
     <color name="purple_500">#6200EE</color>
     <color name="purple_700">#3700B3</color>
     <color name="teal_200">#03DAC5</color>
+    <color name="colorPrimary">#1976D2</color>
+    <color name="colorPrimaryDark">#1565C0</color>
+    <color name="colorPrimaryLight">#E3F2FD</color>
+
+    <!-- Secondary/accent color -->
+    <color name="colorAccent">#FF6D00</color>
+    <color name="colorSecondary">#FF9100</color>
+
+    <!-- Status/Navigation bar colors -->
+    <color name="statusBarColor">#0D47A1</color>
+
+    <!-- Text colors -->
+    <color name="textPrimary">#212121</color>
+    <color name="textSecondary">#757575</color>
+    <color name="textWhite">#FFFFFF</color>
+    <color name="textHint">#BDBDBD</color>
+
+    <!-- Background colors -->
+    <color name="backgroundLight">#FAFAFA</color>
+    <color name="backgroundDark">#212121</color>
+
+    <!-- Divider/line colors -->
+    <color name="divider">#E0E0E0</color>
+
+    <!-- Button colors -->
+    <color name="buttonPrimary">#1976D2</color>
+    <color name="buttonPrimaryPressed">#1565C0</color>
+    <color name="buttonSecondary">#FF6D00</color>
+    <color name="buttonSecondaryPressed">#E65100</color>
+
+    <!-- Ride type specific colors -->
+    <color name="rideStandard">#4CAF50</color>
+    <color name="ridePremium">#9C27B0</color>
+    <color name="rideXL">#FF5722</color>
+    <color name="rideBike">#00BCD4</color>
+
+    <!-- Map marker colors -->
+    <color name="markerPickup">#4CAF50</color>
+    <color name="markerDestination">#F44336</color>
+    <color name="markerDriver">#2196F3</color>
+
+    <!-- Status colors -->
+    <color name="statusAvailable">#4CAF50</color>
+    <color name="statusPending">#FFC107</color>
+    <color name="statusCancelled">#F44336</color>
+    <color name="statusCompleted">#607D8B</color>
+
+    <!-- Payment colors -->
+    <color name="paymentSuccess">#4CAF50</color>
+    <color name="paymentPending">#FFC107</color>
+    <color name="paymentFailed">#F44336</color>
+
+    <!-- Rating colors -->
+    <color name="ratingStarFilled">#FFC107</color>
+    <color name="ratingStarEmpty">#E0E0E0</color>
 </resources>
