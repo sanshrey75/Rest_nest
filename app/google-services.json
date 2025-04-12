@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "280786151290",
+    "project_id": "ridenest-cf997",
+    "storage_bucket": "ridenest-cf997.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:280786151290:android:4007fd2671e527e80598c3",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "280786151290-896q1qavje8l8a1v445scb7bqauvt9iu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myapplication",
+            "certificate_hash": "497aa34cc40f63d3660727284947695048396f20"
+          }
+        },
+        {
+          "client_id": "280786151290-ioqrttpedgre62h29gb14al5ibgti0s9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcsG6ftzqSstFpl6t8x3qgyZ9z6JgBP-s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "280786151290-ioqrttpedgre62h29gb14al5ibgti0s9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
