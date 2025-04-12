@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <!-- Map View -->
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Top App Bar with Menu -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@android:color/white"
+        android:elevation="4dp"
+        app:title="RideNest"
+        app:titleTextColor="@android:color/black"
+        app:menu="@menu/home_menu" />
+
+    <!-- Bottom Ride Panel -->
+    <LinearLayout
+        android:id="@+id/bottomPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/rounded_top_white"
+        android:elevation="16dp"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Ride Type Selection -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+
+            <LinearLayout
+                android:id="@+id/rideTypeContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Ride type items will be added programmatically -->
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <!-- Location Inputs -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_white"
+            android:elevation="4dp"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_pickup"
+                    android:layout_marginEnd="8dp"/>
+
+                <EditText
+                    android:id="@+id/etPickupLocation"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Current location"
+                    android:inputType="text"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E0E0E0"
+                android:layout_marginVertical="4dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_destination"
+                    android:layout_marginEnd="8dp"/>
+
+                <EditText
+                    android:id="@+id/etDestination"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Where to?"
+                    android:inputType="text"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Request Ride Button -->
+        <Button
+            android:id="@+id/btnRequestRide"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="Request Ride"
+            android:textColor="@android:color/white"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            style="@style/RoundedButton"/>
+    </LinearLayout>
+
+    <!-- Current Location Button -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabMyLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottomPanel"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_my_location"
+        app:backgroundTint="@android:color/white"
+        app:tint="@color/colorPrimary"/>
+
+</RelativeLayout>

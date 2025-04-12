@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="default_web_client_id">280786151290-896q1qavje8l8a1v445scb7bqauvt9iu.apps.googleusercontent.com</string>
-
+    <string name="title_home">Home</string>
+    <string name="google_maps_key">AIzaSyC3C4xMXJW2ZiVqVNqKktmwrXwAGc70IWM</string>
+    <string name="title_sign_in">Sign In</string>
+    <string name="title_sign_up">Sign Up</string>
 </resources>
