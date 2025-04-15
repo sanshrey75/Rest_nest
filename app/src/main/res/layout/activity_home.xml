@@ -1,17 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/white"
-        android:fitsSystemWindows="true">
 
         <!-- Map View -->
         <fragment
@@ -27,7 +18,6 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@android:color/white"
             android:elevation="4dp"
-            android:fitsSystemWindows="true"
             app:title="RideNest"
             app:titleTextColor="@android:color/black"
             app:menu="@menu/home_menu" />
@@ -41,8 +31,6 @@
             android:background="@drawable/rounded_top_white"
             android:elevation="16dp"
             android:orientation="vertical"
-            android:padding="16dp"
-            android:paddingBottom="16dp">
 
             <!-- Ride Type Selection -->
             <HorizontalScrollView
@@ -80,17 +68,12 @@
                         android:src="@drawable/ic_pickup"
                         android:layout_marginEnd="8dp"/>
 
-                    <AutoCompleteTextView
                         android:id="@+id/etPickupLocation"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:hint="Current location"
                         android:inputType="text"
-                        android:textSize="14sp"
-                        android:completionThreshold="3"
-                        android:dropDownHeight="300dp"
-                        android:dropDownWidth="match_parent"/>
                 </LinearLayout>
 
                 <View
@@ -110,28 +93,13 @@
                         android:src="@drawable/ic_destination"
                         android:layout_marginEnd="8dp"/>
 
-                    <AutoCompleteTextView
                         android:id="@+id/etDestination"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:hint="Where to?"
                         android:inputType="text"
-                        android:textSize="14sp"
-                        android:completionThreshold="3"
-                        android:dropDownHeight="300dp"
-                        android:dropDownWidth="match_parent"/>
                 </LinearLayout>
-
-                <!-- Current Location Button -->
-                <Button
-                    android:id="@+id/btnCurrentLocation"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Use Current Location"
-                    android:textColor="@color/colorPrimary"
-                    style="@style/Widget.AppCompat.Button.Borderless"/>
             </LinearLayout>
 
             <!-- Request Ride Button -->
@@ -148,7 +116,6 @@
                 style="@style/RoundedButton"/>
         </LinearLayout>
 
-        <!-- Current Location Floating Action Button -->
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fabMyLocation"
             android:layout_width="wrap_content"
@@ -160,4 +127,3 @@
             app:backgroundTint="@android:color/white"
             app:tint="@color/colorPrimary"/>
     </RelativeLayout>
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
