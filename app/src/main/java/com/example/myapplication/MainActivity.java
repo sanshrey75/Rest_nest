@@ -9,7 +9,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnGoToSignUp, btnGoToSignIn;
+    private Button btnGoToSignUp, btnGoToSignIn, btnGoToProfile, btnGoToHistory;
     private FirebaseAuth mAuth;
 
     @Override
@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
         // Initialize buttons only if user is not logged in
         btnGoToSignUp = findViewById(R.id.btnGoToSignUp);
         btnGoToSignIn = findViewById(R.id.btnGoToSignIn);
+        btnGoToProfile = findViewById(R.id.btnGoToProfile);   // New
+        btnGoToHistory = findViewById(R.id.btnGoToHistory);   // New
 
         btnGoToSignUp.setOnClickListener(v -> {
             startActivity(new Intent(MainActivity.this, SignUpActivity.class));
@@ -38,12 +40,21 @@ public class MainActivity extends AppCompatActivity {
         btnGoToSignIn.setOnClickListener(v -> {
             startActivity(new Intent(MainActivity.this, SignInActivity.class));
         });
+
+        // OPTIONAL: For testing before login
+        btnGoToProfile.setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+        });
+
+        btnGoToHistory.setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, HistoryActivity.class));
+        });
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        // Check authentication again when activity resumes
+        // Re-check authentication status
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
             redirectToHome();
@@ -54,6 +65,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, HomeActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
-        finish(); // Finish MainActivity so user can't go back
+        finish(); // Prevent returning to this screen
     }
 }
